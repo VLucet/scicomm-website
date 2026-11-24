@@ -12,21 +12,21 @@
 
 @theme {
   /* ── Brand Colors ───────────────────────────────────────────────── */
-  --color-primary: #1b3a6b;
+  --color-primary: #32267f;
   --color-primary-light: #2563eb;
   --color-primary-fg: #ffffff;
-  --color-accent: #b45309;
+  --color-accent: #202262;
   --color-accent-fg: #ffffff;
 
   /* ── Neutral Scale ──────────────────────────────────────────────── */
-  --color-background: #ffffff;
+  --color-background: #E2EFED;
   --color-surface: #f8fafc;
-  --color-border: #e2e8f0;
+  --color-border: #1b3a6b;
   --color-text: #0f172a;
   --color-text-muted: #475569;
 
   /* ── Dark Mode ──────────────────────────────────────────────────── */
-  --color-dark: #0f172a;
+  --color-dark: #111a31;
   --color-dark-surface: #1e293b;
 
   /* ── Border Radius ──────────────────────────────────────────────── */
