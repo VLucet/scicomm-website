@@ -32,8 +32,16 @@ import type { ImageMetadata } from 'astro';
 // ── Hero ──────────────────────────────────────────────────────────────────────
 // Recommended: landscape, at least 1600 × 1200 px
 // To swap: replace the file in src/assets/images/hero/ and update the filename.
-import heroImage from '../assets/images/hero/hero.jpg';
+import heroImage from '../assets/images/hero/main_mod.jpg';
+import meImage from '../assets/images/hero/avatar.jpg';
+import tracks from '../assets/images/hero/tracks.png';
+import mtl from '../assets/images/hero/mtl.jpg';
+import declineImg from '../assets/images/index/decline_green.jpg';
 export { heroImage };
+export { meImage };
+export { tracks };
+export { mtl };
+export { declineImg };
 
 // ── About ─────────────────────────────────────────────────────────────────────
 // Recommended: portrait or square, at least 900 × 700 px
