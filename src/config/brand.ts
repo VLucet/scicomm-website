@@ -14,10 +14,9 @@
 
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
-  name: 'Small Business Starter',
-  tagline: 'Professional service you can trust.',
-  description:
-    'A fast, mobile-first small-business website template built with Astro 7 and Tailwind v4. Fully customisable for any trade or service business.',
+  name: 'Birds On The Grid 🐦 🏙️', // Birds 🐦 Backpacks 🎒 & Big Cities 🏙️
+  name_short: 'Birds On The Grid - Val. Lucet',
+  tagline: 'Birds are on the move. How do cities shape their journeys?',
   url: 'https://example.com',
   locale: 'en_US',
 
@@ -25,8 +24,8 @@ export const brand = {
   // To swap fonts: change the `name` values here AND update astro.config.mjs
   // to match (both must stay in sync so Astro can optimise the correct files).
   fonts: {
-    body: 'Inter',
-    display: 'Oswald',
+    body: 'Scope One',
+    display: '',
   },
 } as const;
 
