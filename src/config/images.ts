@@ -37,11 +37,15 @@ import meImage from '../assets/images/hero/avatar.jpg';
 import tracks from '../assets/images/hero/tracks.png';
 import mtl from '../assets/images/hero/mtl.jpg';
 import declineImg from '../assets/images/index/decline_green.jpg';
+import citylight from '../assets/images/index/toronto_flight_city_city.jpg';
+import main_track from '../assets/images/index/main_track.png';
 export { heroImage };
 export { meImage };
 export { tracks };
 export { mtl };
 export { declineImg };
+export { citylight };
+export { main_track };
 
 // ── About ─────────────────────────────────────────────────────────────────────
 // Recommended: portrait or square, at least 900 × 700 px
