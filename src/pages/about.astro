@@ -7,8 +7,19 @@ import CTA from '../components/CTA.astro';
 import { Image } from 'astro:assets';
 import { brand } from '../config/brand';
 import { siteData } from '../data/siteData';
+import { meImage as meImage } from '../config/images';
 
 const { about } = siteData;
+
+interface Props {
+  meSrc?: ImageMetadata | string;
+  meAlt?: string;
+}
+
+const {
+  meSrc = meImage,
+  meAlt= 'Valentin Lucet',
+} = Astro.props;
 ---
 
 <BaseLayout title="About Us" description={`Learn about ${brand.name} — our story, team, and commitment to quality service.`}>
@@ -18,29 +29,28 @@ const { about } = siteData;
 
   <!-- Story -->
   <section class="py-section">
-    <div class="mx-auto grid max-w-site grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14">
-      <div class="overflow-hidden rounded-lg shadow-lg">
+    <div class="mx-auto grid max-w-site grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-[20%_1fr] lg:gap-14">
+      <!-- <div class="overflow-hidden rounded-lg shadow-lg"> -->
         <Image
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
-          alt="Our team planning a project together"
-          width={800}
-          height={600}
-          loading="lazy"
-          class="size-full object-cover"
+          src={meSrc}
+          alt={meAlt}
+          width={200}
+          height={200}
+          class="rounded-full border-2 border-primary object-cover"
         />
-      </div>
+      <!-- </div> -->
       <div class="space-y-5">
-        <span class="text-topper font-bold uppercase tracking-widest text-accent">Our Story</span>
-        <h2 class="font-heading text-h2 font-bold uppercase text-text">Built on trust, driven by quality</h2>
+        <span class="text-h4 font-bold uppercase tracking-widest text-accent">Val. Lucet, M.Sc.</span>
+        <h2 class="text-h3 font-bold uppercase text-text">Ecologist & Research software developer</h2>
         {about.story.map((paragraph) => (
-          <p class="text-text-muted leading-relaxed">{paragraph}</p>
+          <p class="text-xl leading-relaxed">{paragraph}</p>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Team -->
-  <section class="bg-surface py-section">
+  <!-- <section class="bg-surface py-section">
     <div class="mx-auto max-w-site px-4 sm:px-6">
       <div class="mx-auto mb-10 max-w-2xl text-center">
         <span class="text-topper font-bold uppercase tracking-widest text-accent">Our Team</span>
@@ -66,9 +76,9 @@ const { about } = siteData;
         ))}
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <CTA />
+  <!-- <CTA /> -->
 
   <Footer slot="footer" />
 </BaseLayout>

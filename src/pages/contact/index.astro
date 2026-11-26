@@ -9,11 +9,10 @@ import { siteData } from "../../data/siteData";
 
 <BaseLayout
   title="Contact"
-  description={`Get in touch with ${brand.name}. Request a free quote or ask us a question.`}
 >
   <Header slot="header" />
 
-  <Banner title="Contact Us" />
+  <Banner title="Contact Me" />
 
   <section class="py-section">
     <div
@@ -22,11 +21,10 @@ import { siteData } from "../../data/siteData";
       <!-- Form -->
       <div class="lg:col-span-3">
         <h2 class="font-heading text-h2 font-bold uppercase text-text">
-          Send us a message
+          Send me a message
         </h2>
         <p class="mt-2 mb-8 text-text-muted">
-          Fill out the form below and we&rsquo;ll get back to you within one
-          business day.
+          Fill out the form below and I&rsquo;ll get back to you ASAP.
         </p>
 
         <form
@@ -111,7 +109,7 @@ import { siteData } from "../../data/siteData";
 
       <!-- Contact info sidebar -->
       <aside class="space-y-8 lg:col-span-2">
-        <div>
+        <!-- <div>
           <h3 class="font-heading text-lg font-semibold text-text">Call Us</h3>
           <a
             href={`tel:${siteData.phoneForTel}`}
@@ -119,10 +117,10 @@ import { siteData } from "../../data/siteData";
           >
             {siteData.phoneFormatted}
           </a>
-        </div>
+        </div> -->
 
         <div>
-          <h3 class="font-heading text-lg font-semibold text-text">Email Us</h3>
+          <h3 class="font-heading text-lg font-semibold text-text">Email Me</h3>
           <a
             href={`mailto:${siteData.email}`}
             class="mt-1 block font-medium text-primary-light transition-colors hover:text-primary"
@@ -132,7 +130,7 @@ import { siteData } from "../../data/siteData";
         </div>
 
         <div>
-          <h3 class="font-heading text-lg font-semibold text-text">Visit Us</h3>
+          <h3 class="font-heading text-lg font-semibold text-text">The Lab</h3>
           <a
             href={siteData.address.mapLink}
             target="_blank"
@@ -154,7 +152,7 @@ import { siteData } from "../../data/siteData";
           </a>
         </div>
 
-        <div>
+        <!-- <div>
           <h3 class="font-heading text-lg font-semibold text-text">Hours</h3>
           <div class="mt-1 space-y-1 text-text-muted">
             {
@@ -172,7 +170,7 @@ import { siteData } from "../../data/siteData";
               )
             }
           </div>
-        </div>
+        </div> -->
       </aside>
     </div>
   </section>

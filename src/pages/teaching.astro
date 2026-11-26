@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Banner from "../components/Banner.astro";
+import CTA_teach from '../components/CTA_teach.astro';
+
+const workshops = [
+  {
+    title: "R Package Development for Research: an Introduction",
+    href: "https://github.com/VLucet/R_pkg_dev_for_research_CSEE_2021",
+    level: "Advanced",
+    length: "~ 3 hours (material)",
+    description:
+      "Workshop on R package development, prepared for the CSEE 2021 meeting.",
+    image: "https://www.r-project.org/logo/Rlogo.svg",
+  },
+  {
+    title: "Git And Github With R and Rstudio",
+    href: "https://github.com/VLucet/git-and-github-with-r-workshop",
+    level: "Beginner",
+    length: "1 hour (preparation) + 3 hours (material)",
+    description:
+      "A workshop geared toward R users, made by collating different open source material and aimed at teaching the basics of version control, with both the <code>git</code> command and Rstudio as a git interface.",
+    image: "https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg",
+  },
+  {
+    title: "A Very Short Introduction to Compute Canada Resources",
+    href: "https://github.com/VLucet/ComputeCanada-short-intro",
+    level: "Beginner",
+    length: "~ 1 hour (material)",
+    description:
+      "First steps on the clusters with an example batch and R scripts.",
+    image: "https://klust.github.io/easybuild-tutorial/img/computecanada.png",
+  },
+  {
+    title: "SQL for Ecologists with R and Tidyverse Equivalent",
+    href: "https://github.com/VLucet/sql-workshop-for-ecologists",
+    level: "Beginner",
+    length: "15 min (preparation) + 3 hours (material)",
+    description:
+      'A workshop adapting the <a href="https://datacarpentry.org/sql-ecology-lesson/" target="_blank" rel="noopener noreferrer" class="font-semibold text-primary underline underline-offset-2 hover:opacity-80">software carpentry SQL workshop for ecologists</a> into slides, and translating the SQL code into both base R and tidyverse code.',
+    image: "https://www.sqlite.org/images/sqlite370_banner.gif",
+  },
+];
+---
+
+<BaseLayout
+  title="Teaching Resources"
+  description="Workshops and teaching resources by Val Lucet: R package development, Git and GitHub, Compute Canada, and SQL for ecologists."
+>
+  <Header slot="header" />
+
+  <Banner title="Teaching Resources" />
+
+<section class="py-section">
+  <div class="mx-auto max-w-site px-4 sm:px-6">
+    <span class="text-h4 font-bold uppercase tracking-widest text-accent">Teaching</span>
+    <h2 class="mt-2 text-h3 font-bold uppercase text-text">Workshops</h2>
+    <p class="mt-3 text-xl">
+      I teach a diverse set of workshops at the graduate student level. All resources are open and accessible, but I am always looking for opportunity to 
+      teach to new audiences. I have taught labs, departmental cohorts and conference attendees.
+    </p>
+
+    <ul class="workshops">
+        {workshops.map((w) => (
+          <li class="workshop">
+            <div class="workshop-text">
+              <h3 class="font-heading text-xl font-bold uppercase text-text">
+                <a
+                  href={w.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary transition-opacity hover:opacity-80"
+                >
+                  {w.title}
+                </a>
+              </h3>
+
+              <p class="workshop-meta">
+                <span><strong class="font-bold text-text">Level:</strong> {w.level}</span>
+                <span><strong class="font-bold text-text">Length:</strong> {w.length}</span>
+              </p>
+
+              <p class="text-xl leading-relaxed" set:html={w.description} />
+            </div>
+
+            <div class="workshop-logo">
+              <img src={w.image} alt="" loading="lazy" />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTA_teach />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Layout lives here (plain CSS) so it doesn't depend on Tailwind
+     picking up classes in this file. */
+  .workshops {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+
+  .workshop {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 6rem; /* text left, logo right */
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  }
+  .workshop:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .workshop-text > * + * {
+    margin-top: 0.75rem;
+  }
+
+  .workshop-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+  }
+
+  .workshop-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .workshop-logo img {
+    width: 100%;
+    height: 4rem;
+    object-fit: contain;
+    object-position: right center;
+  }
+
+  @media (min-width: 640px) {
+    .workshop {
+      grid-template-columns: minmax(0, 1fr) 11rem;
+      gap: 2.5rem;
+    }
+    .workshop-logo img {
+      height: 6rem;
+    }
+  }
+</style>
